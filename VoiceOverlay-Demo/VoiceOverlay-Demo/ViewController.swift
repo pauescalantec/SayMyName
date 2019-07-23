@@ -16,6 +16,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
   let button = UIButton()
   let label = UILabel()
   let searchableWords : Array = ["Daniel","Jennifer","Fire"]
+  var lastIndexSearched : Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,7 +62,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
     voiceOverlayController.delegate = self
     
     // If you want to start recording as soon as modal view pops up, change to true
-    voiceOverlayController.settings.autoStart = false
+    voiceOverlayController.settings.autoStart = true
     voiceOverlayController.settings.autoStop = false
     voiceOverlayController.settings.showResultScreen = false
     voiceOverlayController.settings.layout.inputScreen.subtitleBulletList = ["Suggestion1", "Suggestion2"]
@@ -71,21 +72,27 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
     func parseInputText(inputText : String) {
         let inputTextArray = inputText.components(separatedBy: " ")
         
-        for inputWord in inputTextArray {
-            let isFound = searchableWords.contains(inputWord)
-            print("\(inputWord)")
+        //for (index, inputWord) in inputTextArray.enumerated()
+        for index in lastIndexSearched..<inputTextArray.count {
+            
+            let isFound = searchableWords.contains(inputTextArray[index])
+            
+            if (isFound)
+            {
+                // Notify
+            }
+            print("\(inputTextArray[index])")
             print("Found \(isFound)")
+            lastIndexSearched += 1
         }
-        
-        
     }
     
   
   @objc func buttonTapped() {
     // First way to listen to recording through callbacks
     voiceOverlayController.start(on: self, textHandler: { (text, final, extraInfo) in
-      print("callback: getting \(String(describing: text))")
-      print("callback: is it final? \(String(describing: final))")
+      //print("callback: getting \(String(describing: text))")
+      //print("callback: is it final? \(String(describing: final))")
         
       self.parseInputText(inputText: text)
       
