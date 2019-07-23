@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ViewController: UIViewController {
 
+    var speechController: Recordable!
+    
     @IBOutlet var ListenButton: UIButton!
     
     @IBOutlet var WordHistoryTable: UITableView!
@@ -17,10 +21,23 @@ class ViewController: UIViewController {
     @IBOutlet var WordRecognizedLabel: UILabel!
     
     var IsListening : Bool = false
+    var dismissHandler: ((Bool) -> ())? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    }
+    
+    func allowMicrophoneTapped() {
+        print("Tap")
+        speechController.requestAuthorization { _ in
+            AVAudioSession.sharedInstance().requestRecordPermission({ (isGranted) in
+                self.dismissMe(animated: true) {
+                    print("dismiss")
+                }
+            })
+        }
     }
     
     func SetupApplication(){
@@ -29,6 +46,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func ListenButtonPress(_ sender: UIButton) {
+        allowMicrophoneTapped()
         IsListening = !IsListening
         ListenButton.setTitle(IsListening ? "Stop" : "Listen", for: .normal)
         

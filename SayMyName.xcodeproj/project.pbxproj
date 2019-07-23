@@ -12,6 +12,9 @@
 		2BC4CA9D22E64E8D008CFC8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4CA9B22E64E8D008CFC8B /* Main.storyboard */; };
 		2BC4CA9F22E64E8E008CFC8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4CA9E22E64E8E008CFC8B /* Assets.xcassets */; };
 		2BC4CAA222E64E8E008CFC8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BC4CAA022E64E8E008CFC8B /* LaunchScreen.storyboard */; };
+		2BC4CAAA22E65E37008CFC8B /* SpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4CAA922E65E37008CFC8B /* SpeechController.swift */; };
+		2BC4CAAC22E65E84008CFC8B /* Recordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4CAAB22E65E84008CFC8B /* Recordable.swift */; };
+		2BC4CAAE22E661D1008CFC8B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC4CAAD22E661D1008CFC8B /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		2BC4CA9E22E64E8E008CFC8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BC4CAA122E64E8E008CFC8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2BC4CAA322E64E8E008CFC8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BC4CAA922E65E37008CFC8B /* SpeechController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechController.swift; sourceTree = "<group>"; };
+		2BC4CAAB22E65E84008CFC8B /* Recordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recordable.swift; sourceTree = "<group>"; };
+		2BC4CAAD22E661D1008CFC8B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 				2BC4CA9E22E64E8E008CFC8B /* Assets.xcassets */,
 				2BC4CAA022E64E8E008CFC8B /* LaunchScreen.storyboard */,
 				2BC4CAA322E64E8E008CFC8B /* Info.plist */,
+				2BC4CAA922E65E37008CFC8B /* SpeechController.swift */,
+				2BC4CAAB22E65E84008CFC8B /* Recordable.swift */,
+				2BC4CAAD22E661D1008CFC8B /* Extensions.swift */,
 			);
 			path = SayMyName;
 			sourceTree = "<group>";
@@ -135,8 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC4CAAE22E661D1008CFC8B /* Extensions.swift in Sources */,
 				2BC4CA9A22E64E8D008CFC8B /* ViewController.swift in Sources */,
 				2BC4CA9822E64E8D008CFC8B /* AppDelegate.swift in Sources */,
+				2BC4CAAC22E65E84008CFC8B /* Recordable.swift in Sources */,
+				2BC4CAAA22E65E37008CFC8B /* SpeechController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
