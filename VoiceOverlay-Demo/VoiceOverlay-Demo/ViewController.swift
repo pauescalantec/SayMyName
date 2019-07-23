@@ -9,6 +9,7 @@
 import UIKit
 import InstantSearchVoiceOverlay
 import Foundation
+import UserNotifications
 
 class ViewController: UIViewController, VoiceOverlayDelegate {
   
@@ -21,6 +22,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    UNUserNotificationCenter.current().delegate = self
     
     let margins = view.layoutMarginsGuide
     
@@ -72,6 +74,11 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
     func parseInputText(inputText : String) {
         let inputTextArray = inputText.components(separatedBy: " ")
         
+        if (lastIndexSearched >= inputTextArray.count)
+        {
+            lastIndexSearched = inputTextArray.count - 1
+        }
+        
         //for (index, inputWord) in inputTextArray.enumerated()
         for index in lastIndexSearched..<inputTextArray.count {
             
@@ -79,11 +86,27 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
             
             if (isFound)
             {
-                // Notify
+                sendNotification(wordFound: inputTextArray[index])
             }
             print("\(inputTextArray[index])")
             print("Found \(isFound)")
             lastIndexSearched += 1
+        }
+    }
+    
+    func sendNotification(wordFound: String){
+        let wordContent = UNMutableNotificationContent()
+        wordContent.title = wordFound
+        wordContent.subtitle = "Heard"
+        
+        let wordTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "Heard word \(wordFound)", content: wordContent, trigger: wordTrigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
         }
     }
     
@@ -128,5 +151,12 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
   }
   
   
+}
+
+extension ViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
+        // some other way of handling notification
+        completionHandler([.alert, .sound])
+    }
 }
 
