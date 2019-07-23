@@ -19,53 +19,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VoiceOverlay-Demo/ViewController.swift"
-            timestampString = "585610078.0038739"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "sendNotification(wordFound:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VoiceOverlay_Demo.ViewController.sendNotification(wordFound: Swift.String) -&gt; ()"
-                  moduleName = "VoiceOverlay-Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pescalante/Desktop/Paulina/MicrosoftHack2019/SayMyName/VoiceOverlay-Demo/VoiceOverlay-Demo/ViewController.swift"
-                  timestampString = "585609324.9265209"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "117"
-                  endingLineNumber = "117"
-                  offsetFromSymbolStart = "796">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in VoiceOverlay_Demo.ViewController.sendNotification(wordFound: Swift.String) -&gt; ()"
-                  moduleName = "VoiceOverlay-Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pescalante/Desktop/Paulina/MicrosoftHack2019/SayMyName/VoiceOverlay-Demo/VoiceOverlay-Demo/ViewController.swift"
-                  timestampString = "585609324.92844"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "118"
-                  endingLineNumber = "118"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

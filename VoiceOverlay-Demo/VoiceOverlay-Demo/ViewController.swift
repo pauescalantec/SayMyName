@@ -16,7 +16,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
   let voiceOverlayController = VoiceOverlayController()
   let button = UIButton()
   let label = UILabel()
-  let searchableWords : Array = ["Daniel","Jennifer","Fire"]
+  let searchableWords : Array = ["daniel","jennifer","fire", "danger"]
   var lastIndexSearched : Int = 0
   
   override func viewDidLoad() {
@@ -82,7 +82,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
         //for (index, inputWord) in inputTextArray.enumerated()
         for index in lastIndexSearched..<inputTextArray.count {
             
-            let isFound = searchableWords.contains(inputTextArray[index])
+            let isFound = searchableWords.contains(inputTextArray[index].lowercased())
             
             if (isFound)
             {
@@ -99,7 +99,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
         wordContent.title = wordFound
         wordContent.subtitle = "Heard"
         
-        let wordTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let wordTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
         
         let request = UNNotificationRequest(identifier: "Heard word \(wordFound)", content: wordContent, trigger: wordTrigger)
         
