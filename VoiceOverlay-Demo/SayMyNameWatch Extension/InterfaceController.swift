@@ -40,6 +40,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+       
+        let messagestring = message["Message"] as? String
+        
+        watchLabel.setText(messagestring)
         WKInterfaceDevice().play(.notification)
     }
 

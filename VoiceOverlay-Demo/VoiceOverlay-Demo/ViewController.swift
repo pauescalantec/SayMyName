@@ -17,7 +17,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
   let voiceOverlayController = VoiceOverlayController()
   let button = UIButton()
   let label = UILabel()
-    let searchableWords : Array = ["daniel","jennifer","fire", "danger", "zyanya", "ciano", "paulina", "carlos", "maria", "earthquake", "crash", "crisis"]
+    let searchableWords : Array = ["daniel","jennifer","fire", "danger", "zyanya", "ciano", "paulina", "carlos", "maria", "earthquake", "crash", "crisis", "test", "lunch"]
   var lastIndexSearched : Int = 0
   var lastMessage: CFAbsoluteTime = 0
 
@@ -112,7 +112,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
             if (isFound)
             {
                 sendNotification(wordFound: inputTextArray[index])
-                sendWatchMessage()
+                sendWatchMessage(text: inputText)
             }
             print("\(inputTextArray[index])")
             print("Found \(isFound)")
@@ -159,7 +159,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
     }
   }
   
-    func sendWatchMessage() {
+    func sendWatchMessage(text: String) {
         let currentTime = CFAbsoluteTimeGetCurrent()
         
         // if less than half a second has passed, bail out
@@ -170,7 +170,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
         // send a message to the watch if it's reachable
         //if (WCSession.default.isReachable) {
             // this is a meaningless message, but it's enough for our purposes
-            let message = ["Message": "Hello"]
+            let message = ["Message": (text)]
             WCSession.default.sendMessage(message, replyHandler: nil)
         //}
         
