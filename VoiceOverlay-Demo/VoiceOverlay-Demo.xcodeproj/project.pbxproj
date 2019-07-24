@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0DE1596B3D3F438D9687E82A /* Pods_VoiceOverlay_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4B2BB039BFF3CB485C10A0 /* Pods_VoiceOverlay_Demo.framework */; };
+		1DB9C36C22E90F4B006283CB /* iconopaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9C36B22E90F4B006283CB /* iconopaque.png */; };
+		1DB9C36D22E90F4B006283CB /* iconopaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9C36B22E90F4B006283CB /* iconopaque.png */; };
+		1DB9C36E22E90F4B006283CB /* iconopaque.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DB9C36B22E90F4B006283CB /* iconopaque.png */; };
 		2BDADBAD22E7B77F00BF9276 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BDADBAB22E7B77F00BF9276 /* Interface.storyboard */; };
 		2BDADBAF22E7B78000BF9276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDADBAE22E7B78000BF9276 /* Assets.xcassets */; };
 		2BDADBB622E7B78000BF9276 /* SayMyNameWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2BDADBB522E7B78000BF9276 /* SayMyNameWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -67,6 +70,8 @@
 
 /* Begin PBXFileReference section */
 		1C4B2BB039BFF3CB485C10A0 /* Pods_VoiceOverlay_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceOverlay_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DB9C36B22E90F4B006283CB /* iconopaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iconopaque.png; path = ../../../../../Desktop/iconopaque.png; sourceTree = "<group>"; };
+		1DB9C36F22E910DE006283CB /* iconopaque.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconopaque.png; sourceTree = "<group>"; };
 		2240AB6E10169DA84016CD8F /* Pods-VoiceOverlay-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceOverlay-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceOverlay-Demo/Pods-VoiceOverlay-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		2BDADBA922E7B77F00BF9276 /* SayMyNameWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayMyNameWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BDADBAC22E7B77F00BF9276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -127,6 +132,7 @@
 				2BDADBBE22E7B78000BF9276 /* NotificationController.swift */,
 				2BDADBC022E7B78100BF9276 /* Assets.xcassets */,
 				2BDADBC222E7B78100BF9276 /* Info.plist */,
+				1DB9C36B22E90F4B006283CB /* iconopaque.png */,
 				2BDADBC322E7B78100BF9276 /* PushNotificationPayload.apns */,
 			);
 			path = "SayMyNameWatch Extension";
@@ -171,6 +177,7 @@
 				E27D296D20E0F2C700B83D4C /* Main.storyboard */,
 				E27D297020E0F2C900B83D4C /* Assets.xcassets */,
 				E27D297220E0F2C900B83D4C /* LaunchScreen.storyboard */,
+				1DB9C36F22E910DE006283CB /* iconopaque.png */,
 				E27D297520E0F2C900B83D4C /* Info.plist */,
 			);
 			path = "VoiceOverlay-Demo";
@@ -296,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BDADBAF22E7B78000BF9276 /* Assets.xcassets in Resources */,
+				1DB9C36D22E90F4B006283CB /* iconopaque.png in Resources */,
 				2BDADBAD22E7B77F00BF9276 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BDADBC122E7B78100BF9276 /* Assets.xcassets in Resources */,
+				1DB9C36E22E90F4B006283CB /* iconopaque.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E27D297420E0F2C900B83D4C /* LaunchScreen.storyboard in Resources */,
+				1DB9C36C22E90F4B006283CB /* iconopaque.png in Resources */,
 				E27D297120E0F2C900B83D4C /* Assets.xcassets in Resources */,
 				E27D296F20E0F2C700B83D4C /* Main.storyboard in Resources */,
 			);
