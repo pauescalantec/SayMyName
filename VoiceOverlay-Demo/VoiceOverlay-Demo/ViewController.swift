@@ -10,14 +10,16 @@ import UIKit
 import InstantSearchVoiceOverlay
 import Foundation
 import UserNotifications
+import WatchConnectivity
 
-class ViewController: UIViewController, VoiceOverlayDelegate {
-  
+class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate {
+
   let voiceOverlayController = VoiceOverlayController()
   let button = UIButton()
   let label = UILabel()
   let searchableWords : Array = ["daniel","jennifer","fire", "danger"]
   var lastIndexSearched : Int = 0
+  var lastMessage: CFAbsoluteTime = 0
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -69,7 +71,30 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
     voiceOverlayController.settings.showResultScreen = false
     voiceOverlayController.settings.layout.inputScreen.subtitleBulletList = ["Suggestion1", "Suggestion2"]
     
-  }
+    if (WCSession.isSupported()) {
+        let session = WCSession.default
+        session.delegate = self
+        session.activate()
+    }
+}
+    
+    func sendNotification(wordFound: String){
+        let wordContent = UNMutableNotificationContent()
+        wordContent.title = wordFound
+        wordContent.subtitle = "Heard"
+        
+        let wordTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: "Heard word \(wordFound)", content: wordContent, trigger: wordTrigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Error \(error.localizedDescription)")
+            }
+        }
+        
+    }
+
     
     func parseInputText(inputText : String) {
         let inputTextArray = inputText.components(separatedBy: " ")
@@ -87,32 +112,15 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
             if (isFound)
             {
                 sendNotification(wordFound: inputTextArray[index])
+                sendWatchMessage()
             }
             print("\(inputTextArray[index])")
             print("Found \(isFound)")
             lastIndexSearched += 1
         }
     }
-    
-    func sendNotification(wordFound: String){
-        let wordContent = UNMutableNotificationContent()
-        wordContent.title = wordFound
-        wordContent.subtitle = "Heard"
-        
-        let wordTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "Heard word \(wordFound)", content: wordContent, trigger: wordTrigger)
-        
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if let error = error {
-                print("Error \(error.localizedDescription)")
-            }
-        }
-
-    }
-
   
-  @objc func buttonTapped() {
+    @objc func buttonTapped() {
     // First way to listen to recording through callbacks
     voiceOverlayController.start(on: self, textHandler: { (text, final, extraInfo) in
       //print("callback: getting \(String(describing: text))")
@@ -151,9 +159,39 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
     }
   }
   
-  
+    func sendWatchMessage() {
+        let currentTime = CFAbsoluteTimeGetCurrent()
+        
+        // if less than half a second has passed, bail out
+        if lastMessage + 0.5 > currentTime {
+            return
+        }
+        
+        // send a message to the watch if it's reachable
+        //if (WCSession.default.isReachable) {
+            // this is a meaningless message, but it's enough for our purposes
+            let message = ["Message": "Hello"]
+            WCSession.default.sendMessage(message, replyHandler: nil)
+        //}
+        
+        // update our rate limiting property
+        lastMessage = CFAbsoluteTimeGetCurrent()
+    }
+    
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
 }
-
 extension ViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
         // some other way of handling notification
