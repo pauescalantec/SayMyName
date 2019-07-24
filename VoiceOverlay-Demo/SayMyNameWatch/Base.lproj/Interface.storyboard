@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SayMyNameWatch" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Word" id="jnU-q9-nQX"/>
+                        <label alignment="left" text="Listening..." id="jnU-q9-nQX"/>
                     </items>
                     <connections>
                         <outlet property="watchLabel" destination="jnU-q9-nQX" id="P7y-Aj-yMG"/>
