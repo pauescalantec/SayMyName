@@ -17,7 +17,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
   let voiceOverlayController = VoiceOverlayController()
   let button = UIButton()
   let label = UILabel()
-  let searchableWords : Array = ["daniel","jennifer","fire", "danger"]
+    let searchableWords : Array = ["daniel","jennifer","fire", "danger", "zyanya", "ciano", "paulina", "carlos", "maria", "earthquake", "crash", "crisis"]
   var lastIndexSearched : Int = 0
   var lastMessage: CFAbsoluteTime = 0
 
