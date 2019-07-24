@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0DE1596B3D3F438D9687E82A /* Pods_VoiceOverlay_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4B2BB039BFF3CB485C10A0 /* Pods_VoiceOverlay_Demo.framework */; };
+		2BDADBAD22E7B77F00BF9276 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BDADBAB22E7B77F00BF9276 /* Interface.storyboard */; };
+		2BDADBAF22E7B78000BF9276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDADBAE22E7B78000BF9276 /* Assets.xcassets */; };
+		2BDADBB622E7B78000BF9276 /* SayMyNameWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2BDADBB522E7B78000BF9276 /* SayMyNameWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2BDADBBB22E7B78000BF9276 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDADBBA22E7B78000BF9276 /* InterfaceController.swift */; };
+		2BDADBBD22E7B78000BF9276 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDADBBC22E7B78000BF9276 /* ExtensionDelegate.swift */; };
+		2BDADBBF22E7B78000BF9276 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDADBBE22E7B78000BF9276 /* NotificationController.swift */; };
+		2BDADBC122E7B78100BF9276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BDADBC022E7B78100BF9276 /* Assets.xcassets */; };
+		2BDADBC622E7B78100BF9276 /* SayMyNameWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2BDADBA922E7B77F00BF9276 /* SayMyNameWatch.app */; };
 		E27D296A20E0F2C700B83D4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D296920E0F2C700B83D4C /* AppDelegate.swift */; };
 		E27D296C20E0F2C700B83D4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27D296B20E0F2C700B83D4C /* ViewController.swift */; };
 		E27D296F20E0F2C700B83D4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D296D20E0F2C700B83D4C /* Main.storyboard */; };
@@ -15,9 +23,63 @@
 		E27D297420E0F2C900B83D4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E27D297220E0F2C900B83D4C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2BDADBB722E7B78000BF9276 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E27D295E20E0F2C700B83D4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BDADBB422E7B78000BF9276;
+			remoteInfo = "SayMyNameWatch Extension";
+		};
+		2BDADBC422E7B78100BF9276 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E27D295E20E0F2C700B83D4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BDADBA822E7B77F00BF9276;
+			remoteInfo = SayMyNameWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2BDADBCA22E7B78100BF9276 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2BDADBB622E7B78000BF9276 /* SayMyNameWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BDADBCE22E7B78100BF9276 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2BDADBC622E7B78100BF9276 /* SayMyNameWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1C4B2BB039BFF3CB485C10A0 /* Pods_VoiceOverlay_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceOverlay_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2240AB6E10169DA84016CD8F /* Pods-VoiceOverlay-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceOverlay-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceOverlay-Demo/Pods-VoiceOverlay-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		2BDADBA922E7B77F00BF9276 /* SayMyNameWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SayMyNameWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BDADBAC22E7B77F00BF9276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2BDADBAE22E7B78000BF9276 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BDADBB022E7B78000BF9276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BDADBB522E7B78000BF9276 /* SayMyNameWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SayMyNameWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BDADBBA22E7B78000BF9276 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2BDADBBC22E7B78000BF9276 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		2BDADBBE22E7B78000BF9276 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		2BDADBC022E7B78100BF9276 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2BDADBC222E7B78100BF9276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BDADBC322E7B78100BF9276 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		2BDADBCF22E7BE0A00BF9276 /* VoiceOverlay-Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "VoiceOverlay-Demo.entitlements"; sourceTree = "<group>"; };
 		ABE1265CF5CA0C4D9CCFA2CF /* Pods-VoiceOverlay-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceOverlay-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceOverlay-Demo/Pods-VoiceOverlay-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		E27D296620E0F2C700B83D4C /* VoiceOverlay-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceOverlay-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E27D296920E0F2C700B83D4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +91,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2BDADBB222E7B78000BF9276 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E27D296320E0F2C700B83D4C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,6 +109,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BDADBAA22E7B77F00BF9276 /* SayMyNameWatch */ = {
+			isa = PBXGroup;
+			children = (
+				2BDADBAB22E7B77F00BF9276 /* Interface.storyboard */,
+				2BDADBAE22E7B78000BF9276 /* Assets.xcassets */,
+				2BDADBB022E7B78000BF9276 /* Info.plist */,
+			);
+			path = SayMyNameWatch;
+			sourceTree = "<group>";
+		};
+		2BDADBB922E7B78000BF9276 /* SayMyNameWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2BDADBBA22E7B78000BF9276 /* InterfaceController.swift */,
+				2BDADBBC22E7B78000BF9276 /* ExtensionDelegate.swift */,
+				2BDADBBE22E7B78000BF9276 /* NotificationController.swift */,
+				2BDADBC022E7B78100BF9276 /* Assets.xcassets */,
+				2BDADBC222E7B78100BF9276 /* Info.plist */,
+				2BDADBC322E7B78100BF9276 /* PushNotificationPayload.apns */,
+			);
+			path = "SayMyNameWatch Extension";
+			sourceTree = "<group>";
+		};
 		59E799AFA1843BC8D39F4028 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				E27D296820E0F2C700B83D4C /* VoiceOverlay-Demo */,
+				2BDADBAA22E7B77F00BF9276 /* SayMyNameWatch */,
+				2BDADBB922E7B78000BF9276 /* SayMyNameWatch Extension */,
 				E27D296720E0F2C700B83D4C /* Products */,
 				EC7C042F9731F23ECB611588 /* Pods */,
 				59E799AFA1843BC8D39F4028 /* Frameworks */,
@@ -62,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				E27D296620E0F2C700B83D4C /* VoiceOverlay-Demo.app */,
+				2BDADBA922E7B77F00BF9276 /* SayMyNameWatch.app */,
+				2BDADBB522E7B78000BF9276 /* SayMyNameWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +165,7 @@
 		E27D296820E0F2C700B83D4C /* VoiceOverlay-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				2BDADBCF22E7BE0A00BF9276 /* VoiceOverlay-Demo.entitlements */,
 				E27D296920E0F2C700B83D4C /* AppDelegate.swift */,
 				E27D296B20E0F2C700B83D4C /* ViewController.swift */,
 				E27D296D20E0F2C700B83D4C /* Main.storyboard */,
@@ -91,6 +188,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2BDADBA822E7B77F00BF9276 /* SayMyNameWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BDADBCB22E7B78100BF9276 /* Build configuration list for PBXNativeTarget "SayMyNameWatch" */;
+			buildPhases = (
+				2BDADBA722E7B77F00BF9276 /* Resources */,
+				2BDADBCA22E7B78100BF9276 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2BDADBB822E7B78000BF9276 /* PBXTargetDependency */,
+			);
+			name = SayMyNameWatch;
+			productName = SayMyNameWatch;
+			productReference = 2BDADBA922E7B77F00BF9276 /* SayMyNameWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2BDADBB422E7B78000BF9276 /* SayMyNameWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BDADBC722E7B78100BF9276 /* Build configuration list for PBXNativeTarget "SayMyNameWatch Extension" */;
+			buildPhases = (
+				2BDADBB122E7B78000BF9276 /* Sources */,
+				2BDADBB222E7B78000BF9276 /* Frameworks */,
+				2BDADBB322E7B78000BF9276 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SayMyNameWatch Extension";
+			productName = "SayMyNameWatch Extension";
+			productReference = 2BDADBB522E7B78000BF9276 /* SayMyNameWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		E27D296520E0F2C700B83D4C /* VoiceOverlay-Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E27D297820E0F2C900B83D4C /* Build configuration list for PBXNativeTarget "VoiceOverlay-Demo" */;
@@ -100,10 +231,12 @@
 				E27D296320E0F2C700B83D4C /* Frameworks */,
 				E27D296420E0F2C700B83D4C /* Resources */,
 				8532AB0E2ACD1ADDB6E88F37 /* [CP] Embed Pods Frameworks */,
+				2BDADBCE22E7B78100BF9276 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2BDADBC522E7B78100BF9276 /* PBXTargetDependency */,
 			);
 			name = "VoiceOverlay-Demo";
 			productName = "VoiceOverlay-Demo";
@@ -116,13 +249,24 @@
 		E27D295E20E0F2C700B83D4C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Algolia;
 				TargetAttributes = {
+					2BDADBA822E7B77F00BF9276 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					2BDADBB422E7B78000BF9276 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					E27D296520E0F2C700B83D4C = {
 						CreatedOnToolsVersion = 10.0;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -140,11 +284,30 @@
 			projectRoot = "";
 			targets = (
 				E27D296520E0F2C700B83D4C /* VoiceOverlay-Demo */,
+				2BDADBA822E7B77F00BF9276 /* SayMyNameWatch */,
+				2BDADBB422E7B78000BF9276 /* SayMyNameWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2BDADBA722E7B77F00BF9276 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BDADBAF22E7B78000BF9276 /* Assets.xcassets in Resources */,
+				2BDADBAD22E7B77F00BF9276 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BDADBB322E7B78000BF9276 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BDADBC122E7B78100BF9276 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E27D296420E0F2C700B83D4C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -196,6 +359,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2BDADBB122E7B78000BF9276 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BDADBBF22E7B78000BF9276 /* NotificationController.swift in Sources */,
+				2BDADBBD22E7B78000BF9276 /* ExtensionDelegate.swift in Sources */,
+				2BDADBBB22E7B78000BF9276 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E27D296220E0F2C700B83D4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -207,7 +380,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		2BDADBB822E7B78000BF9276 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BDADBB422E7B78000BF9276 /* SayMyNameWatch Extension */;
+			targetProxy = 2BDADBB722E7B78000BF9276 /* PBXContainerItemProxy */;
+		};
+		2BDADBC522E7B78100BF9276 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BDADBA822E7B77F00BF9276 /* SayMyNameWatch */;
+			targetProxy = 2BDADBC422E7B78100BF9276 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		2BDADBAB22E7B77F00BF9276 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BDADBAC22E7B77F00BF9276 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		E27D296D20E0F2C700B83D4C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -227,6 +421,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2BDADBC822E7B78100BF9276 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AD2WA2ZN6K;
+				INFOPLIST_FILE = "SayMyNameWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SayMyName.paulina.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		2BDADBC922E7B78100BF9276 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AD2WA2ZN6K;
+				INFOPLIST_FILE = "SayMyNameWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SayMyName.paulina.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		2BDADBCC22E7B78100BF9276 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AD2WA2ZN6K;
+				IBSC_MODULE = SayMyNameWatch_Extension;
+				INFOPLIST_FILE = SayMyNameWatch/Info.plist;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SayMyName.paulina.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		2BDADBCD22E7B78100BF9276 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AD2WA2ZN6K;
+				IBSC_MODULE = SayMyNameWatch_Extension;
+				INFOPLIST_FILE = SayMyNameWatch/Info.plist;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = SayMyName.paulina.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
 		E27D297620E0F2C900B83D4C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -346,6 +626,7 @@
 			baseConfigurationReference = ABE1265CF5CA0C4D9CCFA2CF /* Pods-VoiceOverlay-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VoiceOverlay-Demo/VoiceOverlay-Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2WA2ZN6K;
 				INFOPLIST_FILE = "VoiceOverlay-Demo/Info.plist";
@@ -366,6 +647,7 @@
 			baseConfigurationReference = 2240AB6E10169DA84016CD8F /* Pods-VoiceOverlay-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "VoiceOverlay-Demo/VoiceOverlay-Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AD2WA2ZN6K;
 				INFOPLIST_FILE = "VoiceOverlay-Demo/Info.plist";
@@ -384,6 +666,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2BDADBC722E7B78100BF9276 /* Build configuration list for PBXNativeTarget "SayMyNameWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BDADBC822E7B78100BF9276 /* Debug */,
+				2BDADBC922E7B78100BF9276 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BDADBCB22E7B78100BF9276 /* Build configuration list for PBXNativeTarget "SayMyNameWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BDADBCC22E7B78100BF9276 /* Debug */,
+				2BDADBCD22E7B78100BF9276 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E27D296120E0F2C700B83D4C /* Build configuration list for PBXProject "VoiceOverlay-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

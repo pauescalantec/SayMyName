@@ -18,7 +18,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
   let label = UILabel()
   let searchableWords : Array = ["daniel","jennifer","fire", "danger"]
   var lastIndexSearched : Int = 0
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -108,8 +108,9 @@ class ViewController: UIViewController, VoiceOverlayDelegate {
                 print("Error \(error.localizedDescription)")
             }
         }
+
     }
-    
+
   
   @objc func buttonTapped() {
     // First way to listen to recording through callbacks
@@ -159,4 +160,3 @@ extension ViewController: UNUserNotificationCenterDelegate {
         completionHandler([.alert, .sound])
     }
 }
-
