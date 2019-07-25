@@ -16,8 +16,10 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
 
   let voiceOverlayController = VoiceOverlayController()
   let button = UIButton()
+  let buttonAddWord = UIButton()
+  let buttonWords = UIButton()
   let label = UILabel()
-    let searchableWords : Array = ["daniel","jennifer","fire", "danger", "zyanya", "ciano", "paulina", "carlos", "maria", "earthquake", "crash", "crisis", "test", "lunch"]
+  var searchableWords : Array = ["adam","danger","fire"]
   var lastIndexSearched : Int = 0
   var lastMessage: CFAbsoluteTime = 0
 
@@ -29,6 +31,9 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
     let margins = view.layoutMarginsGuide
     
     button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    buttonAddWord.addTarget(self, action: #selector(addWord), for: .touchUpInside)
+    buttonWords.addTarget(self, action: #selector(viewWords), for: .touchUpInside)
+
     label.text = "Result Text from the Voice Input"
     
     label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -44,11 +49,31 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
     button.layer.borderWidth = 1
     button.layer.borderColor = UIColor(red: 237/255, green: 82/255, blue: 129/255, alpha: 1).cgColor
     
+    buttonAddWord.setTitle("Add Word", for: .normal)
+    buttonAddWord.setTitleColor(.white, for: .normal)
+    buttonAddWord.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    buttonAddWord.backgroundColor = UIColor(red: 0/255.0, green: 128/255.0, blue: 0/255.0, alpha: 1)
+    buttonAddWord.layer.cornerRadius = 7
+    buttonAddWord.layer.borderWidth = 1
+    buttonAddWord.layer.borderColor = UIColor(red: 0/255, green: 128/255, blue: 0/255, alpha: 1).cgColor
+    
+    buttonWords.setTitle("View Words", for: .normal)
+    buttonWords.setTitleColor(.white, for: .normal)
+    buttonWords.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+    buttonWords.backgroundColor = UIColor(red: 255/255.0, green: 140/255.0, blue: 0/255.0, alpha: 1)
+    buttonWords.layer.cornerRadius = 7
+    buttonWords.layer.borderWidth = 1
+    buttonWords.layer.borderColor = UIColor(red: 255/255, green: 140/255, blue: 0/255, alpha: 1).cgColor
+    
     label.translatesAutoresizingMaskIntoConstraints = false
     button.translatesAutoresizingMaskIntoConstraints = false
+    buttonAddWord.translatesAutoresizingMaskIntoConstraints = false
+    buttonWords.translatesAutoresizingMaskIntoConstraints = false
     
     self.view.addSubview(label)
     self.view.addSubview(button)
+    self.view.addSubview(buttonAddWord)
+    self.view.addSubview(buttonWords)
     
     NSLayoutConstraint.activate([
       label.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
@@ -61,6 +86,20 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
     button.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
     button.centerYAnchor.constraint(equalTo: margins.centerYAnchor, constant: 10),
     button.heightAnchor.constraint(equalToConstant: 50),
+    ])
+    
+    NSLayoutConstraint.activate([
+    buttonAddWord.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
+    buttonAddWord.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
+    buttonAddWord.centerYAnchor.constraint(equalTo: margins.centerYAnchor, constant: 80),
+    buttonAddWord.heightAnchor.constraint(equalToConstant: 50),
+    ])
+    
+    NSLayoutConstraint.activate([
+    buttonWords.leadingAnchor.constraint(equalTo: margins.leadingAnchor, constant: 10),
+    buttonWords.trailingAnchor.constraint(equalTo: margins.trailingAnchor, constant: -10),
+    buttonWords.centerYAnchor.constraint(equalTo: margins.centerYAnchor, constant: 150),
+    buttonWords.heightAnchor.constraint(equalToConstant: 50),
     ])
     
     voiceOverlayController.delegate = self
@@ -148,6 +187,42 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
     }
     )
   }
+    
+    @objc func addWord() {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Add Word", message: "Enter a single word to recognize", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.placeholder = "danger"
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            let wordToAdd = textField?.text?.lowercased()
+            self.searchableWords.append(wordToAdd!)
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func viewWords() {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Recognize Words:", message: searchableWords.joined(separator: ", "), preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        //alert.addTextField { (textField) in
+          //  textField.placeholder = "danger"
+        //}
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
   // Second way to listen to recording through delegate
   func recording(text: String?, final: Bool?, error: Error?) {
     if let error = error {
