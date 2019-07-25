@@ -14,7 +14,13 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SayMyNameWatch" customModuleProvider="target">
                     <items>
-                        <label alignment="left" text="Listening..." id="jnU-q9-nQX"/>
+                        <group width="1" alignment="left" id="JUC-Z9-Odz">
+                            <items>
+                                <label alignment="left" text="Listening..." numberOfLines="50" id="jnU-q9-nQX">
+                                    <accessibilityTraits key="accessibilityTraits" none="YES"/>
+                                </label>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="watchLabel" destination="jnU-q9-nQX" id="P7y-Aj-yMG"/>

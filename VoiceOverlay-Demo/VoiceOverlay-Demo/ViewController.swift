@@ -19,7 +19,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
   let buttonAddWord = UIButton()
   let buttonWords = UIButton()
   let label = UILabel()
-  var searchableWords : Array = ["adam","danger","fire"]
+  var searchableWords : Array = ["chris","rachel","danger","fire"]
   var lastIndexSearched : Int = 0
   var lastMessage: CFAbsoluteTime = 0
 
@@ -151,7 +151,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
             if (isFound)
             {
                 sendNotification(wordFound: inputTextArray[index])
-                sendWatchMessage(text: inputText)
+                sendWatchMessage(text: inputTextArray[index])
             }
             print("\(inputTextArray[index])")
             print("Found \(isFound)")

@@ -16,7 +16,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
         // Configure interface objects here.
     }
     
@@ -42,8 +41,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
        
         let messagestring = message["Message"] as? String
-        
-        watchLabel.setText(messagestring)
+
+        watchLabel.setText("Word detected: " + (messagestring!))
         WKInterfaceDevice().play(.notification)
     }
 
