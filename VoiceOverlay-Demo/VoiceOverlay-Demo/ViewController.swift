@@ -108,7 +108,7 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
     voiceOverlayController.settings.autoStart = true
     voiceOverlayController.settings.autoStop = false
     voiceOverlayController.settings.showResultScreen = false
-    voiceOverlayController.settings.layout.inputScreen.subtitleBulletList = ["Suggestion1", "Suggestion2"]
+    voiceOverlayController.settings.layout.inputScreen.subtitleBulletList = ["Fire", "Danger"]
     
     if (WCSession.isSupported()) {
         let session = WCSession.default
