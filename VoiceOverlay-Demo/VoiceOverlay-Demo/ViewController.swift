@@ -201,7 +201,9 @@ class ViewController: UIViewController, VoiceOverlayDelegate, WCSessionDelegate 
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
             let wordToAdd = textField?.text?.lowercased()
-            self.searchableWords.append(wordToAdd!)
+            if (wordToAdd != ""){
+               self.searchableWords.append(wordToAdd!)
+            }
         }))
         
         // 4. Present the alert.
